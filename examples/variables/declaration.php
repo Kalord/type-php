@@ -30,14 +30,14 @@ float $floatThree = 10.0;
  * @see examples/array
  */
 //Declaration with define of size
-int integersOne[10];
-int integersTwo[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-int integersThree = new Array(10);
-int integersFour = new Array(10, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+int $integersOne[10];
+int $integersTwo[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+int $integersThree = new Array(10);
+int $integersFour = new Array(10, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
 
 //Declaration without define of size
-int integerFive = {1, 2, 3};
-int integerSix = new Array({1, 2, 3});
+int $integerFive = {1, 2, 3};
+int $integerSix = new Array({1, 2, 3});
 
 
 /**
@@ -48,12 +48,12 @@ int integerSix = new Array({1, 2, 3});
 //Empty string
 //contains nullObject
 //@see examples/nullObject
-string stringOne;
+string $stringOne;
 //Declaration with define of value
-string stringTwo = "Hello, World!";
+string $stringTwo = "Hello, World!";
 
 /**
  * Boolean
  */
-bool isTrue = true;
-bool isFalse = false;
+bool $isTrue = true;
+bool $isFalse = false;
