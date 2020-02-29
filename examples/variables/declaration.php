@@ -1,7 +1,7 @@
 /**
  * Integer declaration
  */
-//Сontains zeros
+//Сontains zero
 int $integerOne;
 $integerOne = 1;
 int $integerTwo = 1;
