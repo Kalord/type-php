@@ -1,0 +1,21 @@
+/**
+ * Config file for transpiler
+ */
+/**
+ * In the section define files for transpiler
+ */
+TranspilerList:
+    * //All files
+    //index.php, SiteController.php, Post.php //Files list
+/**
+ * In the section define output path
+ */
+Output:
+    result //In this directory
+    //var/www/result Absolute path to other directory
+/**
+ * In the section define version output PHP
+ * If you do not specify a version, 5.4 will become default
+ */
+Version:
+    7.3
