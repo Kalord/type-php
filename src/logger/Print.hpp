@@ -8,4 +8,4 @@ class Print
 {
 public:
     static void allLogs(Logger* logger);
-}
+};

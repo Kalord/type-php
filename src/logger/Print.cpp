@@ -12,7 +12,7 @@ void Print::allLogs(Logger* logger)
     int step = 1;
     for(auto record : records)
     {
-        std::cout << "Step: " << step << record.getContent() << std::endl;
+        std::cout << "Step " << step << ": " << record.getContent() << std::endl;
         if(record.getType() == SUCCESS) std::cout << "Success" << std::endl;
         if(record.getType() == ERROR) std::cout << "Error" << std::endl;
         step++;
