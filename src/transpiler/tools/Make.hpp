@@ -4,6 +4,9 @@
 #include "../TranspilerList.hpp"
 #include "../../php/Version.hpp"
 #include "../../io/File.hpp"
+#include "../../logger/Logger.hpp"
+#include "../../logger/Record.hpp"
+#include "../../debug/Debug.hpp"
 
 /**
  * Tool for transpiler
@@ -12,15 +15,18 @@
 class Make
 {
 private:
+    File config;
     TranspilerList list;
     Version version;
 
     std::string pathToMake;
-
-    void parseConfig();
 public:
     Make(std::string pathToMake = "make.php");
     ~Make();
+    void parseConfig();
     TranspilerList getTranspilerList();
     Version getVersion();
+    File* getConfig();
+    void setPathToConfig(std::string path);
+    void loadTranspilerList(TranspilerList list);
 };
