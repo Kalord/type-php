@@ -4,6 +4,10 @@ File::File(std::string pathToFile)
 {
     this->file.open(pathToFile, std::ios_base::in | std::ios_base::out);
     this->pathToFile = pathToFile;
+    if(DEBUG)
+    {
+        Debug::printMessage("In constructor of File");
+    }
 }
 
 File::~File()
@@ -67,4 +71,10 @@ void File::append(const std::string& content)
 void File::rename(std::string newName)
 {
     std::rename(this->pathToFile.c_str(), newName.c_str());
+}
+
+void File::open(std::string pathToFile)
+{
+    if(this->isOpen()) this->file.close();
+    this->file.open(pathToFile);
 }

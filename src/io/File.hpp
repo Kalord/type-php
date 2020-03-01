@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "../debug/Debug.hpp"
 
 /**
  * Класс для работы с файлами
@@ -30,4 +31,6 @@ public:
     void rewrite(u_int64_t start, u_int64_t end, const std::string& content);
     void append(const std::string& content);
     void rename(std::string newName);
+
+    void open(std::string pathToFile);
 };
