@@ -7,27 +7,39 @@ void Input::processingRequest(int argv, char** args)
 {
     if(DEBUG)
     {
-        Debug::printMessage("In method processingRequest");
-    }
+        Debug::printMessage("In method processingRequest");    }
 
     Make make;
 
     //Use make
-    if(argv == 2 && args[1] == "make")
+    if(argv == 2 && std::string(args[1]) == "make")
     {
+        if(DEBUG)
+        {
+            Debug::printMessage("In standart make");
+        }
+
+        make.setPathToConfig("make.tphp");
         make.parseConfig();
     }
-    else if(argv == 3 && args[1] == "make")
+    else if(argv == 3 && std::string(args[1]) == "make")
     {
-        make.setPathToConfig(args[2]);
+        if(DEBUG)
+        {
+            Debug::printMessage("In make");
+        }
+        make.setPathToConfig(std::string(args[2]));
         make.parseConfig();
     }
     else if(argv > 1)
     {
+        if(DEBUG)
+        {
+            Debug::printMessage("In TranspilerList");
+        }
         TranspilerList transpilerList;
-        for(int i = 1; i < argv; i++) transpilerList.add(args[i]);
+        for(int i = 1; i < argv; i++) transpilerList.add(std::string(args[i]));
         make.loadTranspilerList(transpilerList);
-        make.parseConfig();
     }
 
     
@@ -36,5 +48,6 @@ void Input::processingRequest(int argv, char** args)
         Debug::printMessage("End method processingRequest");
     }
 
-    //(Transpiler(make.getTranspilerList(), make.getVersionPHP(), make.getOutput()));
+    if(!Logger::getInstance()->existsError())
+        //(Transpiler(make.getTranspilerList(), make.getVersionPHP(), make.getOutput()));
 }

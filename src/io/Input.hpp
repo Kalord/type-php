@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../transpiler/tools/Make.hpp"
+#include "../transpiler/tools/make/Make.hpp"
 
 class Input
 {
