@@ -1,7 +1,6 @@
 #include "Make.hpp"
 
-Make::Make(std::string pathToMake) :
-pathToMake(pathToMake), version(Version{}), list(TranspilerList{}), config(File(this->pathToMake))
+Make::Make()
 {
     if(DEBUG)
     {
@@ -23,6 +22,9 @@ void Make::parseConfig()
         Logger::getInstance()->addRecord(Record(errorMessage, ERROR));
         return;
     }
+
+    //this->makeParser.parse(this->config)
+    //this->loadTranspilerList(this->makeParser.getTranspilerList());
 }
 
 File* Make::getConfig()

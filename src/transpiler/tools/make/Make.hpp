@@ -21,7 +21,7 @@ private:
 
     std::string pathToMake;
 public:
-    Make(std::string pathToMake = "make.php");
+    Make();
     ~Make();
     void parseConfig();
     TranspilerList getTranspilerList();
