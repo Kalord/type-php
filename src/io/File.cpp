@@ -2,12 +2,13 @@
 
 File::File(std::string pathToFile)
 {
-    this->file.open(pathToFile, std::ios_base::in | std::ios_base::out);
-    this->pathToFile = pathToFile;
     if(DEBUG)
     {
         Debug::printMessage("In constructor of File");
     }
+    
+    this->file.open(pathToFile, std::ios_base::in | std::ios_base::out);
+    this->pathToFile = pathToFile;
 }
 
 File::~File()

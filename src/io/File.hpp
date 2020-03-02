@@ -21,6 +21,7 @@ private:
      **/
     std::string pathToFile;
 public:
+    File() {}
     File(std::string pathToFile);
     ~File();
 
